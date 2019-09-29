@@ -1,9 +1,4 @@
-/**
- * AUFGABE 2
- * generateRect (10 Punkte)
- * Implementieren Sie die Methode generateRect gemäß des Javadoc-Kommentares.
- * 
- */
+
 public class Chess {
 
     /**
