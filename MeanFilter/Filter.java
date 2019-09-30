@@ -49,13 +49,23 @@ public class Filter {
      * mean({herbert, frida, margon}, isYoungerThan50, getWeight) = 48.0
      */
     public static <T> double mean(final T[] elements, final Condition<T> condition, final Value<T> value) {
-        if(elements == null) throw new IllegalArgumentException();
+        if(elements == null || condition == null || value == null) throw new IllegalArgumentException();
         int counter=0;
+        double d = 0.0;
+         
+        for(int i = 0; i < elements.length; i++){
         
-      
+            if(condition.check(elements[i])){
+                counter++;
+                d += value.get(elements[i]);
+            }
+        }
+       
+        if(counter == 0) throw new NoSuchElementException();
         
+        return d/counter;
         
-        throw new UnsupportedOperationException();
+
     }
 
 }
